@@ -187,6 +187,11 @@ const captureWebsite = async (input, options) => {
 		launchOptions.slowMo = 100;
 	}
 
+	
+	launchOptions.args = [
+	    '--no-sandbox',
+	    '--disable-setuid-sandbox',
+	  ]
 	const browser = options._browser || await puppeteer.launch(launchOptions);
 	const page = await browser.newPage();
 
